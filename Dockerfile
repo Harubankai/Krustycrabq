@@ -14,7 +14,7 @@ FROM php:8.2-fpm
 
 RUN apt-get update && apt-get install -y \
     git curl unzip sqlite3 libsqlite3-dev \
-    libonig-dev libzip-dev zip \
+    libonig-dev libzip-dev zip libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql mbstring zip
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
